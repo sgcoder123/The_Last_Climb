@@ -9,10 +9,12 @@ var lava_immunity = false
 
 
 var completed = []
-var score = str(completed.size)
-@onready var score_label = $Score
-func _score():
+var score = 0
+@onready var score_label = $"../Score"
+func score_text():
+	score = str((completed.size() -1) * 100)
 	score_label.text = "Player Score:" + score
+
 func _physics_process(delta: float) -> void:	
 	# Add the gravity.
 	if not is_on_floor():
@@ -44,6 +46,7 @@ func _physics_process(delta: float) -> void:
 				completed.append(collision.get_collider().get_instance_id())
 				print(collision.get_collider().get_instance_id())
 				print(completed)
+	score_text()
 	
 func _process(_delta: float) -> void:
 	if $Knight10 == null:

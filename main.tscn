@@ -10,10 +10,10 @@
 [ext_resource type="Texture2D" uid="uid://csepbd53q5bh8" path="res://IMG_5908.jpeg" id="8_5vw27"]
 [ext_resource type="Texture2D" uid="uid://b0kl5qyqp0l25" path="res://IMG_4199.png" id="9_kek77"]
 [ext_resource type="Texture2D" uid="uid://bcsol74x0jitg" path="res://IMG_2929-removebg-preview.png" id="10_4c57u"]
-[ext_resource type="Texture2D" uid="uid://byar5fmd20cc7" path="res://Untitled_presentation-8-removebg-preview.png" id="11_efxa6"]
+[ext_resource type="Texture2D" uid="uid://cwunrhtu3ljde" path="res://Untitled presentation-9.png" id="11_efxa6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vivmo"]
-size = Vector2(319.44696, 162.38608)
+size = Vector2(318.20233, 163.21454)
 
 [sub_resource type="GDScript" id="GDScript_272bh"]
 script/source = "extends CollisionShape2D
@@ -55,38 +55,38 @@ script = ExtResource("1_5vw27")
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(575.50006, 624)
+position = Vector2(574.75, 553.5)
 scale = Vector2(3.6156237, 1.207)
 shape = SubResource("RectangleShape2D_vivmo")
 script = SubResource("GDScript_272bh")
 
 [node name="Lava" type="AnimatedSprite2D" parent="Area2D"]
 z_index = 1
-position = Vector2(575.50006, 523.06)
-scale = Vector2(3.615625, 1.237875)
+position = Vector2(575.75, 449.24997)
+scale = Vector2(3.6078124, 1.4421878)
 sprite_frames = SubResource("SpriteFrames_w48qg")
 autoplay = "default"
 
 [node name="bg" type="Sprite2D" parent="."]
 z_index = -2
-position = Vector2(577, 358.5)
-scale = Vector2(2.3469388, 1.4591837)
+position = Vector2(578.50006, 322.49997)
+scale = Vector2(2.3530612, 1.3122451)
 texture = ExtResource("8_5vw27")
 
 [node name="Score" type="Label" parent="."]
 offset_left = 21.0
 offset_top = 78.0
-offset_right = 262.0
-offset_bottom = 133.0
+offset_right = 277.0
+offset_bottom = 138.0
 theme_override_font_sizes/font_size = 35
 text = "Score:"
 
 [node name="Platform" parent="." groups=["platforms"] instance=ExtResource("7_272bh")]
 z_index = -1
-position = Vector2(584.00006, 45.000008)
+position = Vector2(596, 44.000008)
 
 [node name="Player" parent="." instance=ExtResource("6_7mycd")]
-position = Vector2(609.99994, -124)
+position = Vector2(630, -123)
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 3.65
@@ -147,9 +147,9 @@ position = Vector2(286.99997, 38)
 scale = Vector2(0.43749997, 0.45591787)
 texture = ExtResource("10_4c57u")
 
-[node name="UntitledPresentation8RemovebgPreview" type="Sprite2D" parent="."]
-position = Vector2(961, 121.375)
-scale = Vector2(0.59759766, 0.6646666)
+[node name="UntitledPresentation9" type="Sprite2D" parent="."]
+position = Vector2(983, 91.00001)
+scale = Vector2(0.40338528, 0.38888887)
 texture = ExtResource("11_efxa6")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
