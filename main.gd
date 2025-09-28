@@ -14,4 +14,16 @@ func _process(delta: float) -> void:
 func newplatform():
 	var clone = platform.instantiate()
 	var x_axis = randi_range(200,1000)
+	var platforms = get_tree().get_nodes_in_group("platforms")
+	for node in platforms:
+		var dist = abs(node.position.x - x_axis)
+		while dist < clone.get_node("AnimatableBody2D/Platform_img").texture.get_width():
+			x_axis = randi_range(200,1000)
+			dist = abs(node.position.x - x_axis)
 	clone.position.x = x_axis
+	add_child(clone)
+	
+
+
+func _on_timer_timeout() -> void:
+	newplatform() 

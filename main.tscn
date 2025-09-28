@@ -6,8 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://b50wwkoiwf6r5" path="res://sprite_3.png" id="5_efxa6"]
 [ext_resource type="PackedScene" uid="uid://b0aibpuuxvakc" path="res://player.tscn" id="6_7mycd"]
 [ext_resource type="Texture2D" uid="uid://c3job8f1akocv" path="res://sprite_4.png" id="6_dg77c"]
-[ext_resource type="Texture2D" uid="uid://crbkkcwtc64aw" path="res://IMG_0028.jpeg" id="7_5vw27"]
 [ext_resource type="PackedScene" uid="uid://c3fyi466o066h" path="res://platform.tscn" id="7_272bh"]
+[ext_resource type="Texture2D" uid="uid://csepbd53q5bh8" path="res://IMG_5908.jpeg" id="8_5vw27"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_w48qg"]
 animations = [{
@@ -67,8 +67,14 @@ position = Vector2(777.99994, 389.99997)
 [node name="Player" parent="." instance=ExtResource("6_7mycd")]
 position = Vector2(790, 220)
 
-[node name="Img0028" type="Sprite2D" parent="."]
+[node name="Timer" type="Timer" parent="."]
+wait_time = 4.0
+autostart = true
+
+[node name="Img5908" type="Sprite2D" parent="."]
 z_index = -1
-position = Vector2(575.75, 357.25)
-scale = Vector2(1.6985185, 1.077548)
-texture = ExtResource("7_5vw27")
+position = Vector2(577.5, 356)
+scale = Vector2(2.357143, 1.4571428)
+texture = ExtResource("8_5vw27")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

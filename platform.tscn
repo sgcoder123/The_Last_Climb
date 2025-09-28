@@ -1,19 +1,23 @@
-[gd_scene load_steps=3 format=3 uid="uid://c3fyi466o066h"]
+[gd_scene load_steps=4 format=3 uid="uid://c3fyi466o066h"]
 
 [ext_resource type="Texture2D" uid="uid://c2mbhw4x7svc8" path="res://IMG_0026-removebg-preview.png" id="1_mi635"]
+[ext_resource type="Script" uid="uid://48hkboy00v7n" path="res://img_0026_removebg_preview.gd" id="2_s8bxr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2cqfq"]
-size = Vector2(526.44055, 186.62712)
+size = Vector2(492.2067, 186.62712)
 
-[node name="Platform" type="CharacterBody2D"]
+[node name="Platform" type="Node2D"]
 scale = Vector2(0.32862213, 0.4500951)
+script = ExtResource("2_s8bxr")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["platforms"]]
-position = Vector2(0.00024414063, 0)
+[node name="AnimatableBody2D" type="AnimatableBody2D" parent="."]
+
+[node name="Platform_img" type="Sprite2D" parent="AnimatableBody2D"]
+position = Vector2(-2.6626449, 0)
+scale = Vector2(1.2074631, 1.424636)
+texture = ExtResource("1_mi635")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D" groups=["platforms"]]
+position = Vector2(-11.791671, 0)
 scale = Vector2(0.9999999, 0.99999964)
 shape = SubResource("RectangleShape2D_2cqfq")
-
-[node name="Img0026RemovebgPreview" type="Sprite2D" parent="."]
-position = Vector2(-0.00024414063, 0)
-scale = Vector2(1.2695998, 1.4246361)
-texture = ExtResource("1_mi635")
