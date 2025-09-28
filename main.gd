@@ -8,7 +8,7 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
 
 func newplatform():
@@ -33,9 +33,16 @@ func _on_timer_timeout() -> void:
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	pass
 	if body == $Player:
-		hearts -= 2
+		# Check lava immunity
+		if body.lava_immunity:
+			body.lava_immunity = false  # consume immunity (1-time use)
+			$Player.position.y = 0
+			$Player.velocity.y = 0
+			return  # skip damage
+
+		# Apply lava damage
+		hearts -= 3
 		if hearts < 5:
 			$heart5.visible = false
 		if hearts < 4:
@@ -46,9 +53,12 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 			$heart2.visible = false
 		if hearts < 1:
 			$heart1.visible = false
+
+		# Respawn player after falling in lava
 		$Player.position.y = 0
 		$Player.velocity.y = 0
-	
+
+
 func _input(event):
 	if event is InputEventKey and event.pressed:
 		if event.keycode == KEY_1:
@@ -56,7 +66,10 @@ func _input(event):
 		elif event.keycode == KEY_2:
 			hearts -= 1
 		elif event.keycode == KEY_3:
-			hearts -= 3
+			hearts -= 2
+			$Player.lava_immunity = true  # grant 1-time lava immunity
+
+		# Update heart UI
 		if hearts < 5:
 			$heart5.visible = false
 		if hearts < 4:

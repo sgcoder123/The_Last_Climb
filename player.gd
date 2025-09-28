@@ -5,12 +5,13 @@ const SPEED = 300.0
 const JUMP_VELOCITY = -600.0
 var double = false
 var double_jump_enabled = false 
+var lava_immunity = false
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
-
+	
 	# Handle jump.
 	if Input.is_action_just_pressed("ui_up"):
 		if is_on_floor():
@@ -27,10 +28,10 @@ func _physics_process(delta: float) -> void:
 		velocity.x = direction * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
-
+	
 	move_and_slide()
 	
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if $Knight10 == null:
 		return
 	if velocity.x > 0:
@@ -39,3 +40,5 @@ func _process(delta: float) -> void:
 		$Knight10.flip_h = true
 	if Input.is_key_pressed(KEY_1):
 		double_jump_enabled = true
+	if Input.is_key_pressed(KEY_3):
+		lava_immunity = true
