@@ -1,0 +1,64 @@
+[gd_scene load_steps=10 format=3 uid="uid://dm6as6vqpq76w"]
+
+[ext_resource type="Texture2D" uid="uid://2eyq7aiyo20j" path="res://sprite_1.png" id="3_kek77"]
+[ext_resource type="Texture2D" uid="uid://desr2mg5pntxd" path="res://sprite_2.png" id="4_4c57u"]
+[ext_resource type="Texture2D" uid="uid://b50wwkoiwf6r5" path="res://sprite_3.png" id="5_efxa6"]
+[ext_resource type="PackedScene" uid="uid://b0aibpuuxvakc" path="res://player.tscn" id="6_7mycd"]
+[ext_resource type="Texture2D" uid="uid://c3job8f1akocv" path="res://sprite_4.png" id="6_dg77c"]
+[ext_resource type="PackedScene" uid="uid://c3fyi466o066h" path="res://platform.tscn" id="7_272bh"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_w48qg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_kek77")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_4c57u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_efxa6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_dg77c")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vivmo"]
+size = Vector2(319.44696, 182.27011)
+
+[sub_resource type="GDScript" id="GDScript_272bh"]
+script/source = "extends CollisionShape2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
+
+[node name="Node" type="Node2D"]
+
+[node name="Lava" type="AnimatedSprite2D" parent="."]
+position = Vector2(576.5, 528)
+scale = Vector2(3.615625, 1.207)
+sprite_frames = SubResource("SpriteFrames_w48qg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Lava"]
+position = Vector2(0, 69.594025)
+scale = Vector2(0.9999997, 1)
+shape = SubResource("RectangleShape2D_vivmo")
+script = SubResource("GDScript_272bh")
+
+[node name="Platform" parent="." instance=ExtResource("7_272bh")]
+position = Vector2(-11.000001, -85)
+
+[node name="Player" parent="." instance=ExtResource("6_7mycd")]
+position = Vector2(77, -251)
