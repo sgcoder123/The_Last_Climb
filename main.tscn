@@ -86,7 +86,7 @@ z_index = -1
 position = Vector2(596, 44.000008)
 
 [node name="Player" parent="." instance=ExtResource("6_7mycd")]
-position = Vector2(630, -123)
+position = Vector2(609, -123)
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 3.65

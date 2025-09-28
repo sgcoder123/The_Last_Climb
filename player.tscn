@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://bwtl3cjbmd6cj" path="res://player.gd" id="1_onrkg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_onrkg"]
-size = Vector2(148.69492, 241.5)
+size = Vector2(115.76253, 214.5)
 
 [node name="Player" type="CharacterBody2D"]
 position = Vector2(73.99999, -41)
@@ -12,10 +12,10 @@ scale = Vector2(1.0020516, 1)
 script = ExtResource("1_onrkg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-39.419098, 0.75)
+position = Vector2(-22.952885, 14.25)
 shape = SubResource("RectangleShape2D_onrkg")
 
 [node name="Knight10" type="Sprite2D" parent="."]
-position = Vector2(0.99795914, 1.5258789e-05)
-scale = Vector2(0.7935109, 0.73787874)
+position = Vector2(0.99795914, 0.87500775)
+scale = Vector2(0.7935109, 0.7325758)
 texture = ExtResource("1_4flbx")

@@ -48,7 +48,8 @@ func newplatform():
 		clone.set_duration(duration)
 
 	add_child(clone)
-
+	duration -= 1
+	
 func _on_timer_timeout() -> void:
 	newplatform()
 
@@ -59,13 +60,13 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 			player.position.y = 0
 			player.velocity.y = 0
 			return
-
 		hearts = max(0, hearts - 3)
 		update_hearts_ui()
-
-		player.position.y = 0
-		player.velocity.y = 0
-
+		if hearts >= 1:
+			player.position.y = 0
+			player.velocity.y = 0
+		if hearts == 0:
+			get_tree().change_scene_to_file("res://dead.tscn")
 func _input(event):
 	if event is InputEventKey and event.pressed:
 		match event.keycode:
@@ -74,9 +75,8 @@ func _input(event):
 			KEY_2:
 				hearts = max(0, hearts - 2)
 				player.lava_immunity = true
-
+	
 		update_hearts_ui()
-
 func update_hearts_ui():
 	for i in range(5):
 		heart_nodes[i].visible = hearts > i

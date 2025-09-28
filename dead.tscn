@@ -1,10 +1,12 @@
-[gd_scene load_steps=2 format=3 uid="uid://dywffugbpca2h"]
+[gd_scene load_steps=3 format=3 uid="uid://dywffugbpca2h"]
 
-[ext_resource type="Texture2D" uid="uid://bye1k2abesqt4" path="res://IMG_0038.jpeg" id="1_8f3xj"]
+[ext_resource type="Texture2D" uid="uid://bupldnddutxfg" path="res://IMG_0038 2.jpeg" id="1_8f3xj"]
+[ext_resource type="Script" uid="uid://bcy1jnpisea46" path="res://img_00382.gd" id="2_unegr"]
 
-[node name="Node2D" type="Node2D"]
+[node name="Dead" type="Node2D"]
 
-[node name="Img0038" type="Sprite2D" parent="."]
-position = Vector2(613, 323)
-scale = Vector2(1.6202672, 1.557971)
+[node name="Img00382" type="Sprite2D" parent="."]
+position = Vector2(602, 324)
+scale = Vector2(1.8559322, 1.5617433)
 texture = ExtResource("1_8f3xj")
+script = ExtResource("2_unegr")
