@@ -7,7 +7,13 @@ var double = false
 var double_jump_enabled = false 
 var lava_immunity = false
 
-func _physics_process(delta: float) -> void:
+
+var completed = []
+var score = str(completed.size)
+@onready var score_label = $Score
+func _score():
+	score_label.text = "Player Score:" + score
+func _physics_process(delta: float) -> void:	
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
@@ -30,6 +36,14 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 	
 	move_and_slide()
+	
+	for i in get_slide_collision_count():
+		var collision = get_slide_collision(i)
+		if collision.get_collider() is AnimatableBody2D:
+			if not completed.has(collision.get_collider().get_instance_id()):
+				completed.append(collision.get_collider().get_instance_id())
+				print(collision.get_collider().get_instance_id())
+				print(completed)
 	
 func _process(_delta: float) -> void:
 	if $Knight10 == null:

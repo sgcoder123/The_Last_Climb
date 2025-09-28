@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://48hkboy00v7n" path="res://img_0026_removebg_preview.gd" id="2_s8bxr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2cqfq"]
-size = Vector2(492.2067, 186.62712)
+size = Vector2(511.22546, 186.62712)
 
 [node name="Platform" type="Node2D"]
 scale = Vector2(0.32862213, 0.4500951)
@@ -18,6 +18,6 @@ scale = Vector2(1.2074631, 1.424636)
 texture = ExtResource("1_mi635")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D" groups=["platforms"]]
-position = Vector2(-11.791671, 0)
+position = Vector2(-21.301058, 0)
 scale = Vector2(0.9999999, 0.99999964)
 shape = SubResource("RectangleShape2D_2cqfq")

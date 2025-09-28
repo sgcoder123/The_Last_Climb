@@ -73,6 +73,14 @@ position = Vector2(577, 358.5)
 scale = Vector2(2.3469388, 1.4591837)
 texture = ExtResource("8_5vw27")
 
+[node name="Score" type="Label" parent="."]
+offset_left = 21.0
+offset_top = 78.0
+offset_right = 262.0
+offset_bottom = 133.0
+theme_override_font_sizes/font_size = 35
+text = "Score:"
+
 [node name="Platform" parent="." groups=["platforms"] instance=ExtResource("7_272bh")]
 z_index = -1
 position = Vector2(584.00006, 45.000008)
@@ -81,7 +89,7 @@ position = Vector2(584.00006, 45.000008)
 position = Vector2(609.99994, -124)
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 3.6
+wait_time = 3.65
 autostart = true
 
 [node name="heart1" type="Sprite2D" parent="."]
