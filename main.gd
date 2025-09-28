@@ -1,82 +1,82 @@
 extends Node2D
-var platform = preload("res://platform.tscn") # Or load("res://Enemy.tscn")
-var hearts = 5
-var duration = 50
-# Called when the node enters the scene tree for the first time.
+
+@export var platform: PackedScene = preload("res://platform.tscn")
+@export var hearts: int = 5
+@export var duration: int = 50
+
+@onready var player = $Player
+@onready var heart_nodes = [$heart1, $heart2, $heart3, $heart4, $heart5]
+
 func _ready() -> void:
-	pass # Replace with function body.
+	randomize()
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	pass
 
 func newplatform():
 	var clone = platform.instantiate()
-	var x_axis = randi_range(200,1000)
+	var x_axis = randi() % 801 + 200  # Range: 200 to 1000
 	var platforms = get_tree().get_nodes_in_group("platforms")
-	for node in platforms:
-		var dist = abs(node.position.x - x_axis)
-		while dist < clone.get_node("AnimatableBody2D/Platform_img").texture.get_width():
-			x_axis = randi_range(200,1000)
-			dist = abs(node.position.x - x_axis)
-	clone.position.x = x_axis
-	duration -= 1
-	clone.duration = duration
-	add_child(clone)
-	
 
+	var platform_width = 100
+	if clone.has_node("AnimatableBody2D/Platform_img"):
+		var img_node = clone.get_node("AnimatableBody2D/Platform_img")
+		if img_node.has_method("get_texture"):
+			var tex = img_node.texture
+			if tex:
+				platform_width = tex.get_width()
+
+	var attempts = 0
+	while attempts < 10:
+		var overlap = false
+		for node in platforms:
+			if node.is_queued_for_deletion():
+				continue
+			var dist = abs(node.position.x - x_axis)
+			if dist < platform_width:
+				overlap = true
+				break
+		if not overlap:
+			break
+		x_axis = randi() % 801 + 200
+		attempts += 1
+
+	clone.position.x = x_axis
+	duration = max(0, duration - 1)
+
+	if clone.has_method("set_duration"):
+		clone.set_duration(duration)
+
+	add_child(clone)
 
 func _on_timer_timeout() -> void:
-	newplatform() 
-
-
+	newplatform()
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	if body == $Player:
-		# Check lava immunity
-		if body.lava_immunity:
-			body.lava_immunity = false  # consume immunity (1-time use)
-			$Player.position.y = 0
-			$Player.velocity.y = 0
-			return  # skip damage
+	if body == player:
+		if player.lava_immunity:
+			player.lava_immunity = false
+			player.position.y = 0
+			player.velocity.y = 0
+			return
 
-		# Apply lava damage
-		hearts -= 3
-		if hearts < 5:
-			$heart5.visible = false
-		if hearts < 4:
-			$heart4.visible = false
-		if hearts < 3:
-			$heart3.visible = false
-		if hearts < 2:
-			$heart2.visible = false
-		if hearts < 1:
-			$heart1.visible = false
+		hearts = max(0, hearts - 3)
+		update_hearts_ui()
 
-		# Respawn player after falling in lava
-		$Player.position.y = 0
-		$Player.velocity.y = 0
-
+		player.position.y = 0
+		player.velocity.y = 0
 
 func _input(event):
 	if event is InputEventKey and event.pressed:
-		if event.keycode == KEY_1:
-			hearts -= 2
-		elif event.keycode == KEY_2:
-			hearts -= 1
-		elif event.keycode == KEY_3:
-			hearts -= 2
-			$Player.lava_immunity = true  # grant 1-time lava immunity
+		match event.keycode:
+			KEY_1:
+				hearts = max(0, hearts - 1)
+			KEY_2:
+				hearts = max(0, hearts - 2)
+				player.lava_immunity = true
 
-		# Update heart UI
-		if hearts < 5:
-			$heart5.visible = false
-		if hearts < 4:
-			$heart4.visible = false
-		if hearts < 3:
-			$heart3.visible = false
-		if hearts < 2:
-			$heart2.visible = false
-		if hearts < 1:
-			$heart1.visible = false
+		update_hearts_ui()
+
+func update_hearts_ui():
+	for i in range(5):
+		heart_nodes[i].visible = hearts > i

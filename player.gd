@@ -40,5 +40,5 @@ func _process(_delta: float) -> void:
 		$Knight10.flip_h = true
 	if Input.is_key_pressed(KEY_1):
 		double_jump_enabled = true
-	if Input.is_key_pressed(KEY_3):
+	if Input.is_key_pressed(KEY_2):
 		lava_immunity = true
