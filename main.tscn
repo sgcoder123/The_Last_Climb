@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dm6as6vqpq76w"]
+[gd_scene load_steps=15 format=3 uid="uid://dm6as6vqpq76w"]
 
 [ext_resource type="Script" uid="uid://cum5etlgrhdg6" path="res://main.gd" id="1_5vw27"]
 [ext_resource type="Texture2D" uid="uid://2eyq7aiyo20j" path="res://sprite_1.png" id="3_kek77"]
@@ -9,6 +9,25 @@
 [ext_resource type="PackedScene" uid="uid://c3fyi466o066h" path="res://platform.tscn" id="7_272bh"]
 [ext_resource type="Texture2D" uid="uid://csepbd53q5bh8" path="res://IMG_5908.jpeg" id="8_5vw27"]
 [ext_resource type="Texture2D" uid="uid://b0kl5qyqp0l25" path="res://IMG_4199.png" id="9_kek77"]
+[ext_resource type="Texture2D" uid="uid://bcsol74x0jitg" path="res://IMG_2929-removebg-preview.png" id="10_4c57u"]
+[ext_resource type="Texture2D" uid="uid://cynhar8bp8tcu" path="res://Untitled_presentation-3-removebg-preview.png" id="11_efxa6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vivmo"]
+size = Vector2(319.44696, 162.38608)
+
+[sub_resource type="GDScript" id="GDScript_272bh"]
+script/source = "extends CollisionShape2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_w48qg"]
 animations = [{
@@ -30,40 +49,25 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_vivmo"]
-size = Vector2(319.44696, 182.27011)
-
-[sub_resource type="GDScript" id="GDScript_272bh"]
-script/source = "extends CollisionShape2D
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-"
-
 [node name="Node" type="Node2D"]
 script = ExtResource("1_5vw27")
 
-[node name="Lava" type="AnimatedSprite2D" parent="."]
-z_index = 1
-position = Vector2(575.50006, 528)
-scale = Vector2(3.615625, 1.207)
-sprite_frames = SubResource("SpriteFrames_w48qg")
-autoplay = "default"
+[node name="Area2D" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Lava"]
-position = Vector2(0, 69.594025)
-scale = Vector2(0.9999997, 1)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(575.50006, 624)
+scale = Vector2(3.6156237, 1.207)
 shape = SubResource("RectangleShape2D_vivmo")
 script = SubResource("GDScript_272bh")
 
-[node name="Img5909" type="Sprite2D" parent="."]
+[node name="Lava" type="AnimatedSprite2D" parent="Area2D"]
+z_index = 1
+position = Vector2(575.50006, 523.06)
+scale = Vector2(3.615625, 1.237875)
+sprite_frames = SubResource("SpriteFrames_w48qg")
+autoplay = "default"
+
+[node name="bg" type="Sprite2D" parent="."]
 z_index = -2
 position = Vector2(577, 358.5)
 scale = Vector2(2.3469388, 1.4591837)
@@ -74,10 +78,10 @@ z_index = -1
 position = Vector2(584.00006, 45.000008)
 
 [node name="Player" parent="." instance=ExtResource("6_7mycd")]
-position = Vector2(596, -124)
+position = Vector2(609.99994, -124)
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 4.0
+wait_time = 3.5
 autostart = true
 
 [node name="heart1" type="Sprite2D" parent="."]
@@ -90,7 +94,7 @@ position = Vector2(98, 37.784836)
 scale = Vector2(0.05297585, 0.058148697)
 texture = ExtResource("9_kek77")
 
-[node name="heart3" type="Sprite2D" parent="."]
+[node name="heart5" type="Sprite2D" parent="."]
 position = Vector2(287.94565, 38.83681)
 scale = Vector2(0.0544302, 0.059722207)
 texture = ExtResource("9_kek77")
@@ -100,9 +104,45 @@ position = Vector2(223.99995, 37.87335)
 scale = Vector2(0.053625166, 0.058010396)
 texture = ExtResource("9_kek77")
 
-[node name="heart5" type="Sprite2D" parent="."]
-position = Vector2(161.00002, 36.9375)
-scale = Vector2(0.052832037, 0.05634765)
+[node name="heart3" type="Sprite2D" parent="."]
+position = Vector2(160.59377, 37.9375)
+scale = Vector2(0.055322256, 0.05634765)
 texture = ExtResource("9_kek77")
 
+[node name="broken1" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(35.117157, 34.790375)
+scale = Vector2(0.4406902, 0.436808)
+texture = ExtResource("10_4c57u")
+
+[node name="broken2" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(96.999985, 36)
+scale = Vector2(0.4373697, 0.4372639)
+texture = ExtResource("10_4c57u")
+
+[node name="broken3" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(159, 37)
+scale = Vector2(0.42500004, 0.44444442)
+texture = ExtResource("10_4c57u")
+
+[node name="broken4" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(223, 34.888893)
+scale = Vector2(0.4111459, 0.4261943)
+texture = ExtResource("10_4c57u")
+
+[node name="broken5" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(286.99997, 38)
+scale = Vector2(0.43749997, 0.45591787)
+texture = ExtResource("10_4c57u")
+
+[node name="Store" type="Sprite2D" parent="."]
+position = Vector2(1023.00006, 94.875)
+scale = Vector2(0.4084084, 0.5286667)
+texture = ExtResource("11_efxa6")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
