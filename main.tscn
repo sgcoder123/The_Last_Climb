@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dm6as6vqpq76w"]
+[gd_scene load_steps=13 format=3 uid="uid://dm6as6vqpq76w"]
 
 [ext_resource type="Script" uid="uid://cum5etlgrhdg6" path="res://main.gd" id="1_5vw27"]
 [ext_resource type="Texture2D" uid="uid://2eyq7aiyo20j" path="res://sprite_1.png" id="3_kek77"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://c3job8f1akocv" path="res://sprite_4.png" id="6_dg77c"]
 [ext_resource type="PackedScene" uid="uid://c3fyi466o066h" path="res://platform.tscn" id="7_272bh"]
 [ext_resource type="Texture2D" uid="uid://csepbd53q5bh8" path="res://IMG_5908.jpeg" id="8_5vw27"]
+[ext_resource type="Texture2D" uid="uid://b0kl5qyqp0l25" path="res://IMG_4199.png" id="9_kek77"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_w48qg"]
 animations = [{
@@ -50,6 +51,7 @@ func _process(delta: float) -> void:
 script = ExtResource("1_5vw27")
 
 [node name="Lava" type="AnimatedSprite2D" parent="."]
+z_index = 1
 position = Vector2(575.50006, 528)
 scale = Vector2(3.615625, 1.207)
 sprite_frames = SubResource("SpriteFrames_w48qg")
@@ -61,20 +63,46 @@ scale = Vector2(0.9999997, 1)
 shape = SubResource("RectangleShape2D_vivmo")
 script = SubResource("GDScript_272bh")
 
+[node name="Img5909" type="Sprite2D" parent="."]
+z_index = -2
+position = Vector2(577, 358.5)
+scale = Vector2(2.3469388, 1.4591837)
+texture = ExtResource("8_5vw27")
+
 [node name="Platform" parent="." instance=ExtResource("7_272bh")]
-position = Vector2(777.99994, 389.99997)
+z_index = -1
+position = Vector2(584.00006, 45.000008)
 
 [node name="Player" parent="." instance=ExtResource("6_7mycd")]
-position = Vector2(790, 220)
+position = Vector2(596, -124)
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 4.0
 autostart = true
 
-[node name="Img5908" type="Sprite2D" parent="."]
-z_index = -1
-position = Vector2(577.5, 356)
-scale = Vector2(2.357143, 1.4571428)
-texture = ExtResource("8_5vw27")
+[node name="heart1" type="Sprite2D" parent="."]
+position = Vector2(36.250004, 37.249992)
+scale = Vector2(0.052734364, 0.057421885)
+texture = ExtResource("9_kek77")
+
+[node name="heart2" type="Sprite2D" parent="."]
+position = Vector2(98, 37.784836)
+scale = Vector2(0.05297585, 0.058148697)
+texture = ExtResource("9_kek77")
+
+[node name="heart3" type="Sprite2D" parent="."]
+position = Vector2(287.94565, 38.83681)
+scale = Vector2(0.0544302, 0.059722207)
+texture = ExtResource("9_kek77")
+
+[node name="heart4" type="Sprite2D" parent="."]
+position = Vector2(223.99995, 37.87335)
+scale = Vector2(0.053625166, 0.058010396)
+texture = ExtResource("9_kek77")
+
+[node name="heart5" type="Sprite2D" parent="."]
+position = Vector2(161.00002, 36.9375)
+scale = Vector2(0.052832037, 0.05634765)
+texture = ExtResource("9_kek77")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
