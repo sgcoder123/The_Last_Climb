@@ -9,11 +9,11 @@ size = Vector2(526.44055, 186.62712)
 scale = Vector2(0.32862213, 0.4500951)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["platforms"]]
-position = Vector2(2399.4124, 906.47504)
+position = Vector2(0.00024414063, 0)
 scale = Vector2(0.9999999, 0.99999964)
 shape = SubResource("RectangleShape2D_2cqfq")
 
 [node name="Img0026RemovebgPreview" type="Sprite2D" parent="."]
-position = Vector2(2417.6704, 904.2534)
+position = Vector2(-0.00024414063, 0)
 scale = Vector2(1.2695998, 1.4246361)
 texture = ExtResource("1_mi635")
