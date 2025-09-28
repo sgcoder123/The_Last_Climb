@@ -3,16 +3,17 @@
 [ext_resource type="Texture2D" uid="uid://c2mbhw4x7svc8" path="res://IMG_0026-removebg-preview.png" id="1_mi635"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2cqfq"]
-size = Vector2(429.06433, 128.86188)
+size = Vector2(526.44055, 186.62712)
 
 [node name="Platform" type="CharacterBody2D"]
 scale = Vector2(0.32862213, 0.4500951)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1739.0792, 942.0231)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["platforms"]]
+position = Vector2(2399.4124, 906.47504)
 scale = Vector2(0.9999999, 0.99999964)
 shape = SubResource("RectangleShape2D_2cqfq")
 
 [node name="Img0026RemovebgPreview" type="Sprite2D" parent="."]
-position = Vector2(1755.8159, 944.24493)
+position = Vector2(2417.6704, 904.2534)
+scale = Vector2(1.2695998, 1.4246361)
 texture = ExtResource("1_mi635")

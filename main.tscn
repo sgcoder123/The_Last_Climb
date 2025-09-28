@@ -1,10 +1,12 @@
-[gd_scene load_steps=10 format=3 uid="uid://dm6as6vqpq76w"]
+[gd_scene load_steps=12 format=3 uid="uid://dm6as6vqpq76w"]
 
+[ext_resource type="Script" uid="uid://cum5etlgrhdg6" path="res://main.gd" id="1_5vw27"]
 [ext_resource type="Texture2D" uid="uid://2eyq7aiyo20j" path="res://sprite_1.png" id="3_kek77"]
 [ext_resource type="Texture2D" uid="uid://desr2mg5pntxd" path="res://sprite_2.png" id="4_4c57u"]
 [ext_resource type="Texture2D" uid="uid://b50wwkoiwf6r5" path="res://sprite_3.png" id="5_efxa6"]
 [ext_resource type="PackedScene" uid="uid://b0aibpuuxvakc" path="res://player.tscn" id="6_7mycd"]
 [ext_resource type="Texture2D" uid="uid://c3job8f1akocv" path="res://sprite_4.png" id="6_dg77c"]
+[ext_resource type="Texture2D" uid="uid://crbkkcwtc64aw" path="res://IMG_0028.jpeg" id="7_5vw27"]
 [ext_resource type="PackedScene" uid="uid://c3fyi466o066h" path="res://platform.tscn" id="7_272bh"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_w48qg"]
@@ -45,11 +47,13 @@ func _process(delta: float) -> void:
 "
 
 [node name="Node" type="Node2D"]
+script = ExtResource("1_5vw27")
 
 [node name="Lava" type="AnimatedSprite2D" parent="."]
-position = Vector2(576.5, 528)
+position = Vector2(575.50006, 528)
 scale = Vector2(3.615625, 1.207)
 sprite_frames = SubResource("SpriteFrames_w48qg")
+autoplay = "default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Lava"]
 position = Vector2(0, 69.594025)
@@ -61,4 +65,10 @@ script = SubResource("GDScript_272bh")
 position = Vector2(-11.000001, -85)
 
 [node name="Player" parent="." instance=ExtResource("6_7mycd")]
-position = Vector2(77, -251)
+position = Vector2(274, -279)
+
+[node name="Img0028" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(575.75, 357.25)
+scale = Vector2(1.6985185, 1.077548)
+texture = ExtResource("7_5vw27")
