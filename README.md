@@ -20,146 +20,149 @@ A thrilling 2D platformer game built with Godot Engine during a 24-hour hackatho
 
 ## 🕐 24-Hour Hackathon Timeline
 
-This game was created during an intensive 24-hour hackathon. Here's how the development progressed hour by hour:
+This game was created during an intensive 24-hour hackathon starting at **12:00 PM (noon)**. Here's how the development progressed hour by hour:
 
-### **Hour 0-1: Planning & Setup**
+### **Hour 0-1 (12:00 PM - 1:00 PM): Theme Reveal & Planning**
+- Received hackathon theme at 12:00 PM
 - Brainstormed game concept and mechanics
 - Set up Godot Engine project
 - Created initial project structure
 - Sketched basic game design on paper
 - Decided on a vertical platformer concept
 
-### **Hour 1-2: Core Game Mechanics**
+### **Hour 1-2 (1:00 PM - 2:00 PM): Core Game Mechanics**
 - Implemented player character movement (left/right)
 - Added basic jump physics with gravity
 - Created the main game scene structure
 - Set up player character body and collision
 - Implemented basic platform spawning system
 
-### **Hour 2-3: Platform System & Collision**
+### **Hour 2-3 (2:00 PM - 3:00 PM): Platform System & Collision**
 - Developed procedural platform generation algorithm
 - Added platform collision detection
 - Implemented overlap prevention for platforms
 - Created random X-axis positioning (200-1000 range)
 - Added platform width detection for better spawning
 
-### **Hours 3-7: Sleep Break 😴**
+### **Hours 3-7 (3:00 AM - 7:00 AM): Sleep Break 😴**
+- Worked until 3:00 AM (15 hours of coding!)
 - Took a much-needed rest to recharge
 - Let the subconscious work on problem-solving
 - Dreamed of endless platforms (probably!)
+- Woke up at 7:00 AM refreshed and ready
 
-### **Hour 7-8: Fresh Start & Refinement**
+### **Hour 7-8 (7:00 AM - 8:00 AM): Fresh Start & Refinement**
 - Reviewed code from previous night
 - Fixed bugs in platform spawning
 - Adjusted physics parameters for better feel
 - Tweaked gravity settings to 475.0 for optimal gameplay
 
-### **Hour 8-9: Health & Scoring System**
+### **Hour 8-9 (8:00 AM - 9:00 AM): Health & Scoring System**
 - Implemented 5-heart health system
 - Added visual heart UI elements
 - Created scoring mechanism (100 points per platform)
 - Added score display text
 - Implemented lava collision detection
 
-### **Hour 9-10: Game States & Screens**
+### **Hour 9-10 (9:00 AM - 10:00 AM): Game States & Screens**
 - Created intro screen with start instructions
 - Built instructions screen explaining game mechanics
 - Designed death/game over screen
 - Added scene transitions between game states
 - Implemented spacebar to start game flow
 
-### **Hour 10-11: Power-up System**
+### **Hour 10-11 (10:00 AM - 11:00 AM): Power-up System**
 - Added double jump ability (KEY_1)
 - Implemented lava immunity power-up (KEY_2)
 - Created power-up activation logic
 - Balanced power-up effects
 - Added visual feedback for character direction
 
-### **Hour 11-12: Art & Animation**
+### **Hour 11-12 (11:00 AM - 12:00 PM): Art & Animation**
 - Added knight character sprite
 - Implemented sprite flipping based on movement direction
 - Created platform graphics
 - Designed heart icons for health display
 - Added lava/death zone visuals
 
-### **Hour 12-13: Difficulty Progression**
+### **Hour 12-13 (12:00 PM - 1:00 PM): Difficulty Progression**
 - Implemented duration-based difficulty system
 - Platforms spawn faster as you climb higher
 - Duration decreases from initial 50
 - Added timer-based platform spawning
 - Balanced spawn rate for fair gameplay
 
-### **Hour 13-14: Polish & Bug Fixes**
+### **Hour 13-14 (1:00 PM - 2:00 PM): Polish & Bug Fixes**
 - Fixed collision detection edge cases
 - Resolved platform overlap issues
 - Improved jump velocity and feel
 - Fixed score calculation bugs
 - Cleaned up debug print statements
 
-### **Hour 14-15: Sound & UI Improvements**
+### **Hour 14-15 (2:00 PM - 3:00 PM): Sound & UI Improvements**
 - Refined UI positioning and visibility
 - Updated heart UI update logic
 - Improved score text formatting
 - Added better visual hierarchy
 - Enhanced game over conditions
 
-### **Hour 15-16: Testing & Balance**
+### **Hour 15-16 (3:00 PM - 4:00 PM): Testing & Balance**
 - Playtested extensively
 - Adjusted player speed (300.0)
 - Tuned jump velocity (-600.0)
 - Balanced heart loss from lava (3 hearts)
 - Fine-tuned platform spawn intervals
 
-### **Hour 16-17: More Testing & Tweaks**
+### **Hour 16-17 (4:00 PM - 5:00 PM): More Testing & Tweaks**
 - Fixed respawn position after lava hit
 - Improved lava immunity mechanics
 - Added safety checks for deleted platforms
 - Optimized collision detection loop
 - Ensured smooth platform transitions
 
-### **Hour 17-18: Export & Web Build**
+### **Hour 17-18 (5:00 PM - 6:00 PM): Export & Web Build**
 - Configured export settings for web
 - Created HTML5 export
 - Set up canvas and display properties
 - Configured Godot web engine settings
 - Tested web version compatibility
 
-### **Hour 18-19: Web Optimization**
+### **Hour 18-19 (6:00 PM - 7:00 PM): Web Optimization**
 - Optimized asset sizes
 - Configured service worker for web
 - Set up proper MIME types and headers
 - Created loading screen with progress bar
 - Added error handling for web deployment
 
-### **Hour 19-20: Final Polish**
+### **Hour 19-20 (7:00 PM - 8:00 PM): Final Polish**
 - Added intro screen graphics
 - Created instruction screen visuals
 - Improved death screen presentation
 - Final balance adjustments
 - Code cleanup and organization
 
-### **Hour 20-21: Documentation Prep**
+### **Hour 20-21 (8:00 PM - 9:00 PM): Documentation Prep**
 - Organized project files
 - Prepared export builds
 - Created multiple export configurations
 - Set up proper folder structure
 - Prepared assets for distribution
 
-### **Hour 21-22: Last-Minute Features**
+### **Hour 21-22 (9:00 PM - 10:00 PM): Last-Minute Features**
 - Added completed platform tracking
 - Improved score calculation
 - Enhanced collision response
 - Final visual polish
 - Last bug fixes
 
-### **Hour 22-23: Final Testing & Export**
+### **Hour 22-23 (10:00 PM - 11:00 PM): Final Testing & Export**
 - Comprehensive playthrough testing
 - Fixed any last-minute issues
 - Created final export builds
 - Verified web build functionality
 - Prepared submission materials
 
-### **Hour 23-24: Submission & Wrap-up**
+### **Hour 23-24 (11:00 PM - 12:00 AM): Submission & Wrap-up**
 - Final git commits
 - Organized repository
 - Prepared project documentation
