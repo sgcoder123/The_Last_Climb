@@ -1,6 +1,6 @@
 # The Last Climb 🧗‍♂️
 
-A thrilling 2D platformer game built with Godot Engine during a 24-hour hackathon! Guide your knight through an endless climb, jumping across platforms while avoiding deadly lava below.
+A thrilling 2D platformer game built with Godot Engine during a 22-hour hackathon! Guide your knight through an endless climb, jumping across platforms while avoiding deadly lava below.
 
 ## 🎮 Game Description
 
@@ -18,156 +18,102 @@ A thrilling 2D platformer game built with Godot Engine during a 24-hour hackatho
 - **Smooth Controls**: Responsive left/right movement and jump mechanics
 - **Game Over Screen**: Displays when health reaches zero
 
-## 🕐 24-Hour Hackathon Timeline
+## 🕐 22-Hour Hackathon Timeline
 
-This game was created during an intensive 24-hour hackathon starting at **12:00 PM (noon)**. Here's how the development progressed hour by hour:
+This game was created during an intensive hackathon from **12:00 PM (noon) on September 27** to **10:00 AM on September 28**, with a sleep break from approximately 3:00 AM to 6:00 AM. Here's the actual development schedule based on git commits:
 
-### **Hour 0-1 (12:00 PM - 1:00 PM): Theme Reveal & Planning**
-- Received hackathon theme at 12:00 PM
+### **Hour 0-8 (12:00 PM - 8:10 PM): Theme Reveal, Planning & Setup**
+- **12:00 PM** - Hackathon begins! Theme revealed
 - Brainstormed game concept and mechanics
 - Set up Godot Engine project
 - Created initial project structure
 - Sketched basic game design on paper
 - Decided on a vertical platformer concept
+- **8:10 PM** - 🎯 **Commit:** `initial commit` - Project foundation established
 
-### **Hour 1-2 (1:00 PM - 2:00 PM): Core Game Mechanics**
-- Implemented player character movement (left/right)
-- Added basic jump physics with gravity
+### **Hours 8-12 (8:10 PM - 12:45 AM): Core Game Mechanics**
+- Implemented player character (CharacterBody2D)
+- Added left/right movement controls
+- Implemented jump physics with gravity
 - Created the main game scene structure
-- Set up player character body and collision
-- Implemented basic platform spawning system
+- Set up player collision detection
+- **12:27 AM** - 🎯 **Commit:** `Added player and movement` - Player controls working!
+- Added game background visuals
+- **12:42 AM** - 🎯 **Commit:** `background` - Background complete
 
-### **Hour 2-3 (2:00 PM - 3:00 PM): Platform System & Collision**
+### **Hours 12-16 (12:45 AM - 3:45 AM): Platform System & Health**
+- **1:18 AM** - 🎯 **Commit:** `clone` - Platform cloning/instantiation working
 - Developed procedural platform generation algorithm
+- Implemented random X-axis positioning (200-1000 range)
 - Added platform collision detection
-- Implemented overlap prevention for platforms
-- Created random X-axis positioning (200-1000 range)
-- Added platform width detection for better spawning
-
-### **Hours 3-7 (3:00 AM - 7:00 AM): Sleep Break 😴**
-- Worked until 3:00 AM (15 hours of coding!)
-- Took a much-needed rest to recharge
-- Let the subconscious work on problem-solving
-- Dreamed of endless platforms (probably!)
-- Woke up at 7:00 AM refreshed and ready
-
-### **Hour 7-8 (7:00 AM - 8:00 AM): Fresh Start & Refinement**
-- Reviewed code from previous night
-- Fixed bugs in platform spawning
-- Adjusted physics parameters for better feel
-- Tweaked gravity settings to 475.0 for optimal gameplay
-
-### **Hour 8-9 (8:00 AM - 9:00 AM): Health & Scoring System**
+- **2:39 AM** - 🎯 **Commit:** `platforms and stuff` - Platform spawning system complete
+- Created overlap prevention for platforms
 - Implemented 5-heart health system
 - Added visual heart UI elements
-- Created scoring mechanism (100 points per platform)
-- Added score display text
-- Implemented lava collision detection
+- Tweaked gravity settings to 475.0
+- **3:45 AM** - 🎯 **Commit:** `hearts and gravity` - Health & physics working
+- **Almost 16 hours of straight coding!** Time for sleep 😴
 
-### **Hour 9-10 (9:00 AM - 10:00 AM): Game States & Screens**
-- Created intro screen with start instructions
-- Built instructions screen explaining game mechanics
-- Designed death/game over screen
-- Added scene transitions between game states
-- Implemented spacebar to start game flow
+### **Hours 16-19 (3:45 AM - ~6:00 AM): Sleep Break 💤**
+- Crashed at approximately 3:45 AM after intense coding session
+- Took a power nap (~2-3 hours)
+- Let the subconscious work on problem-solving
+- Recharged just enough to finish strong
 
-### **Hour 10-11 (10:00 AM - 11:00 AM): Power-up System**
-- Added double jump ability (KEY_1)
-- Implemented lava immunity power-up (KEY_2)
-- Created power-up activation logic
-- Balanced power-up effects
-- Added visual feedback for character direction
-
-### **Hour 11-12 (11:00 AM - 12:00 PM): Art & Animation**
-- Added knight character sprite
-- Implemented sprite flipping based on movement direction
-- Created platform graphics
-- Designed heart icons for health display
-- Added lava/death zone visuals
-
-### **Hour 12-13 (12:00 PM - 1:00 PM): Difficulty Progression**
-- Implemented duration-based difficulty system
-- Platforms spawn faster as you climb higher
-- Duration decreases from initial 50
-- Added timer-based platform spawning
-- Balanced spawn rate for fair gameplay
-
-### **Hour 13-14 (1:00 PM - 2:00 PM): Polish & Bug Fixes**
-- Fixed collision detection edge cases
-- Resolved platform overlap issues
-- Improved jump velocity and feel
-- Fixed score calculation bugs
-- Cleaned up debug print statements
-
-### **Hour 14-15 (2:00 PM - 3:00 PM): Sound & UI Improvements**
-- Refined UI positioning and visibility
-- Updated heart UI update logic
-- Improved score text formatting
-- Added better visual hierarchy
-- Enhanced game over conditions
-
-### **Hour 15-16 (3:00 PM - 4:00 PM): Testing & Balance**
-- Playtested extensively
-- Adjusted player speed (300.0)
-- Tuned jump velocity (-600.0)
+### **Hours 19-22 (6:00 AM - 10:00 AM): Final Push - Power-ups & Polish**
+- **5:55 AM** - 🎯 **Commit:** `power ups menu and double jump functionality`
+  - Added double jump ability (KEY_1)
+  - Created power-up menu system
+  - Implemented double jump logic
+- **6:20 AM** - 🎯 **Commit:** `lava immunity power-up functionality`  
+  - Added lava immunity power-up (KEY_2)
+  - Implemented lava collision detection
+  - Created power-up activation logic
+  - Added visual feedback for character direction
+  - Implemented sprite flipping based on movement
+- Final playtesting and bug fixes
 - Balanced heart loss from lava (3 hearts)
-- Fine-tuned platform spawn intervals
+- Optimized collision detection
+- **10:00 AM** - ⏰ **Hackathon deadline reached!** 
+- **Game was playable and submitted on time!** 🎉
 
-### **Hour 16-17 (4:00 PM - 5:00 PM): More Testing & Tweaks**
-- Fixed respawn position after lava hit
-- Improved lava immunity mechanics
-- Added safety checks for deleted platforms
-- Optimized collision detection loop
-- Ensured smooth platform transitions
+---
 
-### **Hour 17-18 (5:00 PM - 6:00 PM): Export & Web Build**
-- Configured export settings for web
-- Created HTML5 export
-- Set up canvas and display properties
-- Configured Godot web engine settings
+### **Post-Hackathon: Polish & Enhancement Phase**
+
+After the hackathon deadline, development continued to add more polish and features:
+
+### **Afternoon Session (2:00 PM - 4:00 PM): Game States & Screens**
+- **2:23 PM** - 🎯 **Commit:** `Store and immunity refined`
+  - Refined power-up system
+  - Improved lava immunity mechanics  
+  - Added safety checks for platform deletion
+  - Optimized respawn position after lava hit
+- **3:11 PM** - 🎯 **Commit:** `Intro and Introduction screens, building of score count`
+  - Created intro screen with spacebar to start
+  - Built instructions screen explaining controls
+  - Designed game over/death screen
+  - Added scene transitions
+  - Started building score counting system
+- **3:30 PM** - 🎯 **Commit:** `Completed score count`
+  - Finished scoring mechanism (100 points per platform)
+  - Added score display text
+  - Implemented completed platform tracking
+- **4:08 PM** - 🎯 **Commit:** `Double jump tweaks and death change`
+  - Fine-tuned double jump mechanics
+  - Improved death screen presentation
+  - Final gameplay balance adjustments
+  - Code cleanup
+
+### **Final Day: Export & Web Deployment**
+- Created HTML5 export for web browsers
+- Configured export settings and canvas properties
+- Set up proper display modes and stretch settings
 - Tested web version compatibility
-
-### **Hour 18-19 (6:00 PM - 7:00 PM): Web Optimization**
-- Optimized asset sizes
-- Configured service worker for web
-- Set up proper MIME types and headers
-- Created loading screen with progress bar
-- Added error handling for web deployment
-
-### **Hour 19-20 (7:00 PM - 8:00 PM): Final Polish**
-- Added intro screen graphics
-- Created instruction screen visuals
-- Improved death screen presentation
-- Final balance adjustments
-- Code cleanup and organization
-
-### **Hour 20-21 (8:00 PM - 9:00 PM): Documentation Prep**
-- Organized project files
-- Prepared export builds
-- Created multiple export configurations
-- Set up proper folder structure
-- Prepared assets for distribution
-
-### **Hour 21-22 (9:00 PM - 10:00 PM): Last-Minute Features**
-- Added completed platform tracking
-- Improved score calculation
-- Enhanced collision response
-- Final visual polish
-- Last bug fixes
-
-### **Hour 22-23 (10:00 PM - 11:00 PM): Final Testing & Export**
-- Comprehensive playthrough testing
-- Fixed any last-minute issues
-- Created final export builds
-- Verified web build functionality
-- Prepared submission materials
-
-### **Hour 23-24 (11:00 PM - 12:00 AM): Submission & Wrap-up**
-- Final git commits
-- Organized repository
-- Prepared project documentation
-- Created submission package
-- Submitted to hackathon! 🎉
+- Optimized asset sizes for web
+- Organized project file structure
+- Created Export folder with all web files
+- **September 29, 2:02 AM** - 🎯 **Commit:** `Submit project` - Final submission! 🚀
 
 ## 🎯 Game Controls
 
@@ -226,9 +172,9 @@ The_Last_Climb/
 
 ## 🎓 What I Learned
 
-During this 24-hour hackathon, I gained valuable experience in:
+During this intense 22-hour hackathon, I gained valuable experience in:
 
-- **Rapid Prototyping**: Building a complete game in 24 hours
+- **Rapid Prototyping**: Building a complete game in under 22 hours with minimal sleep
 - **Godot Engine**: Working with GDScript and the scene system
 - **Game Physics**: Implementing custom gravity and collision detection
 - **Procedural Generation**: Creating dynamic platform spawning algorithms
@@ -239,7 +185,7 @@ During this 24-hour hackathon, I gained valuable experience in:
 
 ## 🏆 Achievements
 
-- ✅ Completed a fully playable game in 24 hours
+- ✅ Completed a fully playable game in 22 hours (with only 2-3 hours of sleep!)
 - ✅ Implemented multiple game states and screens
 - ✅ Created working power-up system
 - ✅ Deployed web-playable version
@@ -270,10 +216,10 @@ This project was created for a hackathon. Feel free to learn from it and build u
 
 - **Godot Engine** for providing an amazing free and open-source game engine
 - **The Hackathon Organizers** for the opportunity to create this game
-- **Coffee** for keeping me awake during those crucial hours (except 3-7am!)
+- **Coffee** for keeping me awake during those crucial hours (except 3:45am-6am!)
 
 ---
 
-**Made with 💪 and ☕ during a 24-hour hackathon**
+**Made with 💪 and ☕ during a 22-hour hackathon**
 
 *"Every climb begins with a single jump!"*
